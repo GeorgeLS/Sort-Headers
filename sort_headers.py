@@ -18,9 +18,9 @@ def read_headers_from_file(filename):
             cur_pos = 0
             for ch in line:
                 cur_pos += 1;
-                if ch == '<':
+                if ch == '<' or ch == '"':
                     s_pos = cur_pos
-                if ch == '>':
+                if ch == '>' or ch == '"':
                     e_pos = cur_pos - 1
             headers.append((line_n, line[s_pos : e_pos]))
         line_n += 1
